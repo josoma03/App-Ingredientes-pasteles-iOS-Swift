@@ -1,11 +1,10 @@
 # NokiaTest
 Prueba Nokia Desarrollador iOS Jhonattan Solarte Martinez
 
-Este proyecto incluye Strings de internaciónalización (Ingles, Español), splash, iconos, assets, autolayout, y persistencia con Realm. 
-Al ingresar a la app carga el listado para preparar el pastel, todos estarán sin seleccionar inicialmente.
-Los ingredientes pueden ser Batter o Toppings, los cuales se agregan mediante el boton '+'.
+Este proyecto incluye Strings de internaciónalización (Ingles, Español), splash, iconos, assets, autolayout, y persistencia con Realm.Al ingresar a la app carga el listado para preparar el pastel desde la URL y es almacenado den la base de datos, todos los cambios que se hagan (agregar, eliminar ingredientes) se verán reflejados inmediatamente en la base de datos.Los ingredientes todos estarán sin seleccionar inicialmente. 
+Los ingredientes pueden ser Batter o Toppings, los cuales se agregan mediante el boton '+'. 
 Al dar tap en el boton '+', se despliega un listado, del cual se puede seleccionar varios items para ser adicionados a la receta, pero estos no se pueden agregar mas de una vez. 
-Este listado tambien cuenta con un buscador incremental.
+Este listado tambien cuenta con un buscador incremental. 
 La persistencia de datos se realiza con el Pod de Realm.
 
 
