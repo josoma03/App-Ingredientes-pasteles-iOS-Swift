@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Nokia
+
+  Created by Jhonattan Solarte Martinez on 19/01/20.
+  Copyright © 2020 Nokia. All rights reserved.
+*/
+"Accept"="Accept";
+"Cancel"="Cancel";
+"Cake"="Cake";
+"Batters"="Batters";
+"Topping"="Topping";
+"cook_the_cake"="Prepare your cake";
+"delete_confirmation"="Do you want to delete ingredient?";
+"the_ingredient_has_already"="The ingredient '%@' has already been added";
+"All_ingredients_have_already_been_added"="All ingredients have already been added";
+"The_preparation_is_finished"="The preparation is finished";

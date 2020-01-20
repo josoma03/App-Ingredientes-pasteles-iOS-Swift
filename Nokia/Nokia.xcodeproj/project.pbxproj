@@ -19,11 +19,24 @@
 		84C1E10823D3FB15008665A4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10723D3FB15008665A4 /* Reachability.swift */; };
 		84C1E10A23D3FB36008665A4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10923D3FB36008665A4 /* Utils.swift */; };
 		84C1E10C23D3FCB9008665A4 /* CakeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10B23D3FCB9008665A4 /* CakeItem.swift */; };
-		84C1E10E23D3FE05008665A4 /* BatterCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10D23D3FE05008665A4 /* BatterCollectionItem.swift */; };
-		84C1E11023D3FEF3008665A4 /* BatterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10F23D3FEF3008665A4 /* BatterItem.swift */; };
+		84C1E11423D484C7008665A4 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E11323D484C7008665A4 /* IngredientItem.swift */; };
+		84C1E11723D48B82008665A4 /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E11623D48B82008665A4 /* UIViewController+Custom.swift */; };
+		84C1E11C23D48C70008665A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E11E23D48C70008665A4 /* Localizable.strings */; };
+		84C1E12223D4A95B008665A4 /* CakeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E12023D4A95B008665A4 /* CakeDetailCell.swift */; };
+		84C1E12323D4A95B008665A4 /* CakeDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */; };
+		84C1E12623D4AB37008665A4 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E12423D4AB37008665A4 /* IngredientCell.swift */; };
+		84C1E12723D4AB37008665A4 /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12523D4AB37008665A4 /* IngredientCell.xib */; };
+		84C1E12923D4B921008665A4 /* UIImage+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E12823D4B921008665A4 /* UIImage+Custom.swift */; };
+		84C1E12E23D4C7F0008665A4 /* SF-UI-Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12B23D4C7EF008665A4 /* SF-UI-Display-Medium.ttf */; };
+		84C1E12F23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12C23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf */; };
+		84C1E13023D4C7F0008665A4 /* SFUIDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12D23D4C7F0008665A4 /* SFUIDisplay-Black.ttf */; };
+		84C1E13423D50FD1008665A4 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E13323D50FD1008665A4 /* RealmDB.swift */; };
+		84C1E13623D5327C008665A4 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E13523D5327C008665A4 /* ConnectionManager.swift */; };
+		CE40314EA11D18E809C183C2 /* Pods_Nokia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90209C1AEB4559DF75C5B38 /* Pods_Nokia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78744F9069BD0B1B061A3FDC /* Pods-Nokia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nokia.release.xcconfig"; path = "Target Support Files/Pods-Nokia/Pods-Nokia.release.xcconfig"; sourceTree = "<group>"; };
 		84C1E0E423D3E294008665A4 /* Nokia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nokia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C1E0E723D3E294008665A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C1E0E923D3E295008665A4 /* CakeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +51,25 @@
 		84C1E10723D3FB15008665A4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		84C1E10923D3FB36008665A4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		84C1E10B23D3FCB9008665A4 /* CakeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeItem.swift; sourceTree = "<group>"; };
-		84C1E10D23D3FE05008665A4 /* BatterCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterCollectionItem.swift; sourceTree = "<group>"; };
-		84C1E10F23D3FEF3008665A4 /* BatterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterItem.swift; sourceTree = "<group>"; };
+		84C1E11323D484C7008665A4 /* IngredientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientItem.swift; sourceTree = "<group>"; };
+		84C1E11623D48B82008665A4 /* UIViewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Custom.swift"; sourceTree = "<group>"; };
+		84C1E11823D48C28008665A4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		84C1E11923D48C28008665A4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		84C1E11D23D48C70008665A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84C1E11F23D48C72008665A4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		84C1E12023D4A95B008665A4 /* CakeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDetailCell.swift; sourceTree = "<group>"; };
+		84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeDetailCell.xib; sourceTree = "<group>"; };
+		84C1E12423D4AB37008665A4 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		84C1E12523D4AB37008665A4 /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
+		84C1E12823D4B921008665A4 /* UIImage+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
+		84C1E12B23D4C7EF008665A4 /* SF-UI-Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Medium.ttf"; sourceTree = "<group>"; };
+		84C1E12C23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.ttf"; sourceTree = "<group>"; };
+		84C1E12D23D4C7F0008665A4 /* SFUIDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Black.ttf"; sourceTree = "<group>"; };
+		84C1E13223D4DDC4008665A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		84C1E13323D50FD1008665A4 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
+		84C1E13523D5327C008665A4 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		C26561E8B81EB9F9434F8E19 /* Pods-Nokia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nokia.debug.xcconfig"; path = "Target Support Files/Pods-Nokia/Pods-Nokia.debug.xcconfig"; sourceTree = "<group>"; };
+		D90209C1AEB4559DF75C5B38 /* Pods_Nokia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nokia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE40314EA11D18E809C183C2 /* Pods_Nokia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +89,8 @@
 			children = (
 				84C1E0E623D3E294008665A4 /* Nokia */,
 				84C1E0E523D3E294008665A4 /* Products */,
+				F478C70CD222BA631C079828 /* Pods */,
+				DED2AA29D8C0002E113363B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +114,7 @@
 				84C1E0F123D3E299008665A4 /* Assets.xcassets */,
 				84C1E0F623D3E299008665A4 /* Info.plist */,
 				84C1E0EE23D3E295008665A4 /* Nokia.xcdatamodeld */,
+				84C1E11E23D48C70008665A4 /* Localizable.strings */,
 			);
 			path = Nokia;
 			sourceTree = "<group>";
@@ -89,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				84C1E0E923D3E295008665A4 /* CakeListViewController.swift */,
+				84C1E12023D4A95B008665A4 /* CakeDetailCell.swift */,
+				84C1E12423D4AB37008665A4 /* IngredientCell.swift */,
 				84C1E0FC23D3F062008665A4 /* IngredientsListViewController.swift */,
 			);
 			path = Controller;
@@ -98,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				84C1E10B23D3FCB9008665A4 /* CakeItem.swift */,
-				84C1E10D23D3FE05008665A4 /* BatterCollectionItem.swift */,
-				84C1E10F23D3FEF3008665A4 /* BatterItem.swift */,
+				84C1E11323D484C7008665A4 /* IngredientItem.swift */,
+				84C1E13323D50FD1008665A4 /* RealmDB.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +143,7 @@
 		84C1E10023D3FA44008665A4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84C1E12A23D4C7C8008665A4 /* Fonts */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -114,10 +151,12 @@
 		84C1E10123D3FA4B008665A4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				84C1E11523D48B6A008665A4 /* Extensions */,
 				84C1E10323D3FA89008665A4 /* Constants.swift */,
 				84C1E10523D3FAC7008665A4 /* NetworkManager.swift */,
 				84C1E10723D3FB15008665A4 /* Reachability.swift */,
 				84C1E10923D3FB36008665A4 /* Utils.swift */,
+				84C1E13523D5327C008665A4 /* ConnectionManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -127,8 +166,46 @@
 			children = (
 				84C1E0EB23D3E295008665A4 /* Main.storyboard */,
 				84C1E0F323D3E299008665A4 /* LaunchScreen.storyboard */,
+				84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */,
+				84C1E12523D4AB37008665A4 /* IngredientCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84C1E11523D48B6A008665A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84C1E11623D48B82008665A4 /* UIViewController+Custom.swift */,
+				84C1E12823D4B921008665A4 /* UIImage+Custom.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84C1E12A23D4C7C8008665A4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84C1E12B23D4C7EF008665A4 /* SF-UI-Display-Medium.ttf */,
+				84C1E12C23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf */,
+				84C1E12D23D4C7F0008665A4 /* SFUIDisplay-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DED2AA29D8C0002E113363B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D90209C1AEB4559DF75C5B38 /* Pods_Nokia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F478C70CD222BA631C079828 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C26561E8B81EB9F9434F8E19 /* Pods-Nokia.debug.xcconfig */,
+				78744F9069BD0B1B061A3FDC /* Pods-Nokia.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C1E0F923D3E299008665A4 /* Build configuration list for PBXNativeTarget "Nokia" */;
 			buildPhases = (
+				E10787386B2EDD5AD1204822 /* [CP] Check Pods Manifest.lock */,
 				84C1E0E023D3E294008665A4 /* Sources */,
 				84C1E0E123D3E294008665A4 /* Frameworks */,
 				84C1E0E223D3E294008665A4 /* Resources */,
+				4F7855955BC1CB60B2E322D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +252,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 84C1E0DB23D3E294008665A4;
 			productRefGroup = 84C1E0E523D3E294008665A4 /* Products */;
@@ -189,13 +269,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C1E12E23D4C7F0008665A4 /* SF-UI-Display-Medium.ttf in Resources */,
+				84C1E12323D4A95B008665A4 /* CakeDetailCell.xib in Resources */,
 				84C1E0F523D3E299008665A4 /* LaunchScreen.storyboard in Resources */,
+				84C1E12F23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf in Resources */,
+				84C1E13023D4C7F0008665A4 /* SFUIDisplay-Black.ttf in Resources */,
+				84C1E11C23D48C70008665A4 /* Localizable.strings in Resources */,
 				84C1E0F223D3E299008665A4 /* Assets.xcassets in Resources */,
+				84C1E12723D4AB37008665A4 /* IngredientCell.xib in Resources */,
 				84C1E0ED23D3E295008665A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F7855955BC1CB60B2E322D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nokia/Pods-Nokia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nokia/Pods-Nokia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E10787386B2EDD5AD1204822 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nokia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84C1E0E023D3E294008665A4 /* Sources */ = {
@@ -203,15 +338,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1E10823D3FB15008665A4 /* Reachability.swift in Sources */,
+				84C1E12223D4A95B008665A4 /* CakeDetailCell.swift in Sources */,
 				84C1E10623D3FAC7008665A4 /* NetworkManager.swift in Sources */,
+				84C1E11723D48B82008665A4 /* UIViewController+Custom.swift in Sources */,
 				84C1E10423D3FA89008665A4 /* Constants.swift in Sources */,
+				84C1E13423D50FD1008665A4 /* RealmDB.swift in Sources */,
+				84C1E12623D4AB37008665A4 /* IngredientCell.swift in Sources */,
 				84C1E0EA23D3E295008665A4 /* CakeListViewController.swift in Sources */,
 				84C1E0FD23D3F062008665A4 /* IngredientsListViewController.swift in Sources */,
 				84C1E0E823D3E294008665A4 /* AppDelegate.swift in Sources */,
-				84C1E10E23D3FE05008665A4 /* BatterCollectionItem.swift in Sources */,
 				84C1E10C23D3FCB9008665A4 /* CakeItem.swift in Sources */,
+				84C1E11423D484C7008665A4 /* IngredientItem.swift in Sources */,
+				84C1E12923D4B921008665A4 /* UIImage+Custom.swift in Sources */,
+				84C1E13623D5327C008665A4 /* ConnectionManager.swift in Sources */,
 				84C1E0F023D3E295008665A4 /* Nokia.xcdatamodeld in Sources */,
-				84C1E11023D3FEF3008665A4 /* BatterItem.swift in Sources */,
 				84C1E10A23D3FB36008665A4 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +363,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				84C1E0EC23D3E295008665A4 /* Base */,
+				84C1E11823D48C28008665A4 /* es-419 */,
+				84C1E13223D4DDC4008665A4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -231,8 +373,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				84C1E0F423D3E299008665A4 /* Base */,
+				84C1E11923D48C28008665A4 /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84C1E11E23D48C70008665A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C1E11D23D48C70008665A4 /* en */,
+				84C1E11F23D48C72008665A4 /* es-419 */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -242,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -303,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -356,8 +510,10 @@
 		};
 		84C1E0FA23D3E299008665A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C26561E8B81EB9F9434F8E19 /* Pods-Nokia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z352G4JS3;
 				INFOPLIST_FILE = Nokia/Info.plist;
@@ -374,8 +530,10 @@
 		};
 		84C1E0FB23D3E299008665A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78744F9069BD0B1B061A3FDC /* Pods-Nokia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z352G4JS3;
 				INFOPLIST_FILE = Nokia/Info.plist;

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-computer-icons-euro-sign-icon-design-price-tag-5afd22634720a1.9676043415265388512913.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-computer-icons-euro-sign-icon-design-price-tag-5afd22634720a1.9676043415265388512913-1.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-computer-icons-euro-sign-icon-design-price-tag-5afd22634720a1.9676043415265388512913-2.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

@@ -7,21 +7,23 @@
 //
 
 import Foundation
-class CakeItem: NSObject {
+import RealmSwift
+
+class CakeItem: Object {
     
-    var id: String = ""
-    var type: String = ""
-    var name: String = ""
-    var ppu: String = ""
+    @objc dynamic var id: String = ""
+    @objc dynamic var type: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var ppu: Double = 0.0
+    var arrTopings = List<IngredientItem>()
+    var arrBatters = List<IngredientItem>()
+    
     
     override var description: String{
-        return "****CakeItem****\n .id:\t\(id)\ntype:\t\(type)\nname:\t\(name)\n****"
+        return "****CakeItem****\n .id:\t\(id)\n type:\t\(type)\n name:\t\(name)\n arrBatters:\t\(arrBatters)\n arrTopings:\t\(arrTopings)\n****"
     }
     
-    override init(){
-    }
-    
-    init(id:String, type:String, name:String, ppu:String){
+    init(id:String, type:String, name:String, ppu:Double){
         self.id = id
         self.type = type
         self.name = name
@@ -32,9 +34,32 @@ class CakeItem: NSObject {
         let id: String = dic["id"] as? String ?? ""
         let type: String = dic["type"] as? String ?? ""
         let name: String = dic["name"] as? String ?? ""
-        let ppu: String = dic["ppu"] as? String ?? ""
+        var ppu: Double = dic["ppu"] as? Double ?? 0.0
+        ppu = Double(round(1000*ppu)/1000)
+        
+        let batters: Dictionary = dic["batters"] as? Dictionary ?? [:]
+        let arrTopping: NSArray = dic["topping"] as? NSArray ?? []
+        let arrBatters: NSArray = batters["batter"] as? NSArray ?? []
         
         self.init(id:id, type:type, name:name, ppu:ppu)
+        
+        for item in arrTopping {
+            let objIngredient = IngredientItem(dic: item as! NSDictionary)
+            objIngredient.typeIngredient = TypeIngredient.Topping.rawValue
+            self.arrTopings.append(objIngredient)
+        }
+        
+        for item in arrBatters {
+            let objIngredient = IngredientItem(dic: item as! NSDictionary)
+            objIngredient.typeIngredient = TypeIngredient.Batters.rawValue
+            self.arrBatters.append(objIngredient)
+        }
+        
+        
+    }
+    
+    required init() {
+        
     }
     
     func exportAsDictionary() -> NSDictionary{

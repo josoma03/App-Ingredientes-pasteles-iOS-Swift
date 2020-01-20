@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,14 +35,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cook the cake" id="7aT-nG-tmQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EXi-RB-euO">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="leftBarButtonItem" image="iconProfile" id="wrp-JW-Yhp">
+                            <color key="tintColor" name="branding"/>
                             <connections>
-                                <action selector="addIngredientPressed:" destination="A7z-7K-0ak" id="gVE-YG-SDW"/>
-                                <segue destination="DDP-jX-vxA" kind="show" identifier="gotoIngredientsList" id="rQi-7p-bwO"/>
+                                <segue destination="D0c-ue-YgU" kind="show" id="Mwb-dl-kL2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EXi-RB-euO">
+                            <connections>
+                                <action selector="addIngredientPressed:" destination="A7z-7K-0ak" id="crh-VO-abu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="DDP-jX-vxA" kind="show" identifier="goToIngredients" id="hWY-es-mTW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJL-EV-WKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,8 +87,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ingredients" id="xty-re-NQw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6l4-yA-k0e">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="6l4-yA-k0e">
                             <connections>
                                 <action selector="addIngredientPressed:" destination="DDP-jX-vxA" id="7e1-1N-3lS"/>
                             </connections>
@@ -98,9 +106,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eKS-6d-yC4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.047058823529411764" green="0.2627450980392157" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -112,5 +120,56 @@
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="133.5832083958021"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nNJ-H1-EKZ">
+            <objects>
+                <viewController id="D0c-ue-YgU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10u-Po-Flv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-MD-HmP">
+                                <rect key="frame" x="10" y="114" width="355" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jhonattan Solarte Martinez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-zX-arv">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="branding"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(+57) 318 393 4783" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6n-Sw-xQa">
+                                        <rect key="frame" x="0.0" y="34" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="josoma03@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCd-Ef-P4h">
+                                        <rect key="frame" x="0.0" y="64.5" width="355" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMd-MD-HmP" firstAttribute="top" secondItem="xho-tk-VeR" secondAttribute="top" constant="50" id="fMO-hh-dVH"/>
+                            <constraint firstItem="dMd-MD-HmP" firstAttribute="leading" secondItem="xho-tk-VeR" secondAttribute="leading" constant="10" id="wjB-AA-4TD"/>
+                            <constraint firstItem="xho-tk-VeR" firstAttribute="trailing" secondItem="dMd-MD-HmP" secondAttribute="trailing" constant="10" id="y1i-fJ-kbT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xho-tk-VeR"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Xs-zb-TV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="833"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="iconProfile" width="60" height="60"/>
+        <namedColor name="branding">
+            <color red="0.72200000286102295" green="0.59600001573562622" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

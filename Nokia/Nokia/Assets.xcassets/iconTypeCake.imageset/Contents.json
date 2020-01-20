@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-birthday-cake-bakery-computer-icons-clip-art-cake-icon-5b40833194c840.1182995615309545456094.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-birthday-cake-bakery-computer-icons-clip-art-cake-icon-5b40833194c840.1182995615309545456094-1.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-birthday-cake-bakery-computer-icons-clip-art-cake-icon-5b40833194c840.1182995615309545456094-2.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

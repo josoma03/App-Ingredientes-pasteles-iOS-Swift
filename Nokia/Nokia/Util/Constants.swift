@@ -7,6 +7,16 @@
 //
 
 import Foundation
+
 struct Constants {
-    static let KeyAPI           = "1a34751954e7a8f93dbe1c97d3ac882d"
+    static let PathCake = "5ddbebf23400008e4feadfcc"
+    static let ApiURL = "http://www.mocky.io/v2/{path}"
+    static let cellIdentifier = "ReusableCell"
+    static let cellCakeDetail = "CakeDetailCell"
+    static let cellIngredient = "IngredientCell"
+}
+
+enum TypeIngredient: String{
+    case Batters = "batters"
+    case Topping = "topping"
 }

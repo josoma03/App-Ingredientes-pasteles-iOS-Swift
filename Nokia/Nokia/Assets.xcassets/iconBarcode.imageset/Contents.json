@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-barcode-image-scanner-computer-icons-portable-netw-barcode-code-scan-payment-method-e-svg-png-icon-fr-5c76cb010ea428.84075013155128908906.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-barcode-image-scanner-computer-icons-portable-netw-barcode-code-scan-payment-method-e-svg-png-icon-fr-5c76cb010ea428.84075013155128908906-1.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "kisspng-barcode-image-scanner-computer-icons-portable-netw-barcode-code-scan-payment-method-e-svg-png-icon-fr-5c76cb010ea428.84075013155128908906-2.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
