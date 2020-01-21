@@ -1,13 +1,10 @@
 # NokiaTest
 Prueba Nokia Desarrollador iOS Jhonattan Solarte Martinez
 
-Este proyecto incluye Strings de internaciónalización (Ingles, Español), splash, iconos, assets, autolayout, y persistencia con Realm.Al ingresar a la app carga el listado para preparar el pastel desde la URL y es almacenado den la base de datos, todos los cambios que se hagan (agregar, eliminar ingredientes) se verán reflejados inmediatamente en la base de datos.Los ingredientes todos estarán sin seleccionar inicialmente. 
+Este proyecto incluye Strings de internaciónalización (Ingles, Español), splash, iconos, assets, autolayout, y persistencia con Realm.Al ingresar a la app carga la información del pastel, y el listado de ingredientes desde el WS, y son almacenados  en base de datos, todos los cambios que se hagan (agregar, editar, eliminar) se verán reflejados inmediatamente en la base de datos.
+Los ingredientes todos estarán sin seleccionar inicialmente. 
 Los ingredientes pueden ser Batter o Toppings, los cuales se agregan mediante el boton '+'. 
-Al dar tap en el boton '+', se despliega un listado, del cual se puede seleccionar varios items para ser adicionados a la receta, pero estos no se pueden agregar mas de una vez. 
-Este listado tambien cuenta con un buscador incremental. 
 La persistencia de datos se realiza con el Pod de Realm.
-
-
 
 
 # Capas
@@ -28,6 +25,25 @@ La persistencia de datos se realiza con el Pod de Realm.
 
 
 
-![Nokia_1](https://user-images.githubusercontent.com/8276103/72701156-576b6300-3b1c-11ea-9f6d-dd1eefaf1e60.gif)
-![Nokia_2](https://user-images.githubusercontent.com/8276103/72701170-62be8e80-3b1c-11ea-978e-c601faf1f6e6.gif)
-![Nokia_3](https://user-images.githubusercontent.com/8276103/72701171-62be8e80-3b1c-11ea-85da-65e35e84721b.gif)
+![Jhonattan_Solarte_Martinez_4](https://user-images.githubusercontent.com/8276103/72776132-0bcdbd80-3bdf-11ea-8f7a-1b0b124c1397.gif)
+![Jhonattan_Solarte_Martinez_3](https://user-images.githubusercontent.com/8276103/72776134-0bcdbd80-3bdf-11ea-9031-3a9218f8a36a.gif)
+![Jhonattan_Solarte_Martinez_2](https://user-images.githubusercontent.com/8276103/72776135-0bcdbd80-3bdf-11ea-99cc-c49d3e73b3bd.gif)
+![Jhonattan_Solarte_Martinez_1](https://user-images.githubusercontent.com/8276103/72776136-0bcdbd80-3bdf-11ea-9f38-178133aec0ad.gif)
+
+
+
+Subject
+
+ Usted deberá  consumir el siguiente servicio web http://www.mocky.io/v2/5ddbebf23400008e4feadfcc, en donde encontrará los ingredientes para preparar un pastel, estos ingredientes se mostrarán en una lista. que cumplirá  con las siguientes características:
+
+    Se podrá agregar editar y eliminar cualquier item de la lista.
+    Se podrá check en cualquier item de la lista
+    los ingredientes deberán guardarse en una base de datos local.
+    una vez ceckeados los  todos los items de la lista, mostrara un mensaje sencillo indicando que la preparación finalizó.
+
+Recuerde subir el proyecto a un repositorio abierto, enviar el link y un video de la aplicación.
+En esta prueba se evaluaran los siguientes aspectos:
+    manejo de arquitectura (si se aplica).
+    La forma en la que aborda el problema.
+    Clean Code.
+Desarrolle teniendo en cuenta sus habilidades y fortalezas.
