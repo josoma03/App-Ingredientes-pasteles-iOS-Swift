@@ -48,56 +48,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="DDP-jX-vxA" kind="show" identifier="goToIngredients" id="hWY-es-mTW"/>
                         <segue destination="VDI-bm-4by" kind="show" identifier="gotoCreateIngredient" id="wgB-pD-WcV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJL-EV-WKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="133.5832083958021"/>
-        </scene>
-        <!--Ingredients-->
-        <scene sceneID="mnA-LB-TNm">
-            <objects>
-                <tableViewController id="DDP-jX-vxA" customClass="IngredientsListViewController" customModule="Nokia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ew6-mt-9Fa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="CFP-ak-I1d">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="DDP-jX-vxA" id="sjM-4F-hji"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientItemCell" id="XZz-Mo-Mai">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XZz-Mo-Mai" id="ML5-E0-tCg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DDP-jX-vxA" id="ySw-la-bP4"/>
-                            <outlet property="delegate" destination="DDP-jX-vxA" id="KkM-Fe-9xa"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Ingredients" id="xty-re-NQw">
-                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="6l4-yA-k0e">
-                            <connections>
-                                <action selector="addIngredientPressed:" destination="DDP-jX-vxA" id="7e1-1N-3lS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pb7-CD-Rzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2572" y="319"/>
         </scene>
         <!--Title-->
         <scene sceneID="qcN-01-7PS">
@@ -107,8 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-C0-GCK">
-                                <rect key="frame" x="10" y="74" width="355" height="126"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-C0-GCK">
+                                <rect key="frame" x="10" y="74" width="355" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aPQ-nk-bTp">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
@@ -134,7 +90,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-Nm-4As">
-                                        <rect key="frame" x="0.0" y="43" width="355" height="40"/>
+                                        <rect key="frame" x="0.0" y="45" width="355" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8k-Uw-ieK">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
@@ -157,7 +113,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xKl-uD-P3h">
-                                        <rect key="frame" x="0.0" y="86" width="355" height="40"/>
+                                        <rect key="frame" x="0.0" y="90" width="355" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWa-qs-ObX">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
@@ -208,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfL-GE-FnV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2527" y="-443"/>
+            <point key="canvasLocation" x="2534" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D26-xe-Kpo">

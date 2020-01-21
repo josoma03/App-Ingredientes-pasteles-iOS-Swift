@@ -12,49 +12,35 @@ import RealmSwift
 class IngredientItem: Object {
     
     @objc dynamic var id: String = ""
-    @objc dynamic var type: String = ""
+    @objc dynamic var name: String = ""
     @objc dynamic var selected: Bool = false
-    @objc dynamic var typeIngredient:String = ""
+    @objc dynamic var type:String = ""
     var parentCattersCake = LinkingObjects(fromType: CakeItem.self, property: "arrBatters")
     var parentToppingsCake = LinkingObjects(fromType: CakeItem.self, property: "arrTopings")
 
     
     override var description: String{
-        return "****IngredientItem****\n id:\t\(id)\n type:\t\(type)\n selected:\t\(selected)n typeIngredient:\t\(typeIngredient)\n********"
+        return "****IngredientItem****\n id:\t\(id)\n type:\t\(name)\n selected:\t\(selected)n typeIngredient:\t\(type)\n********"
     }
     
-    init(id: String,type: String, typeIngredient: String){
+    init(id: String,name: String, type: String){
         self.id = id
+        self.name = name
         self.type = type
-        self.typeIngredient = typeIngredient
     }
-    init(id: String,type: String){
+    init(id: String,name: String){
         self.id = id
-        self.type = type
+        self.name = name
     }
     
     convenience init(dic: NSDictionary){
         let id: String = dic["id"] as? String ?? ""
-        let type: String = dic["type"] as? String ?? ""
+        let name: String = dic["type"] as? String ?? ""
         
-        self.init(id:id,type:type)
+        self.init(id:id,name:name)
     }
     
     required init() {
         
     }
-    
-    func exportAsDictionary() -> NSDictionary{
-        let id = self.id
-        let type = self.type
-        
-        let dict: NSDictionary = ["id":id,"type":type]
-        
-        return dict
-    }
-    
-    func getFullName() -> String {
-        return "Id: \(self.id) - Type: \(self.type)"
-    }
-    
 }

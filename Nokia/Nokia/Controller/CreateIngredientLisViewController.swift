@@ -9,9 +9,14 @@
 import UIKit
 import Foundation
 
+protocol IngredientsDelegate{
+    func addIngredient(_ objIngredientItem: IngredientItem)
+    func editIngredient(_ objIngredientItem: IngredientItem)
+}
+
 
 class CreateIngredientLisViewController: UIViewController{
-    var delegate : AddIngredientsDelegate?
+    var delegate : IngredientsDelegate?
     var objIngredient : IngredientItem?
     
     @IBOutlet weak var txtName: UITextField!
@@ -20,12 +25,14 @@ class CreateIngredientLisViewController: UIViewController{
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var lblId: UILabel!
     @IBOutlet weak var txtType: UITextField!
-    var arrType : NSMutableArray!
+    var arrType = [TypeStruct]()
     let pickerType: UIPickerView = UIPickerView()   /// Selector del tipo de usuario para autenticación.
+    var isEdit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setValues()
+        
         self.lblType.text = Utils.stringNamed("Type")
         self.lblId.text = Utils.stringNamed("Id")
         self.lblName.text = Utils.stringNamed("Name")
@@ -35,16 +42,33 @@ class CreateIngredientLisViewController: UIViewController{
         let frame: CGRect = CGRect(x: 0, y: 0, width: self.pickerType.frame.width, height: self.pickerType.frame.height)
         self.pickerType.frame = frame
         self.txtType.inputView = self.pickerType
-        arrType = [Utils.stringNamed("Batters"), Utils.stringNamed("Topping")]
+        
+        self.arrType = [
+            TypeStruct(id: TypeIngredient.Batters.rawValue, name: Utils.stringNamed("Batters")),
+            TypeStruct(id: TypeIngredient.Topping.rawValue, name: Utils.stringNamed("Topping"))
+        ]
+        
+        
+        if self.isEdit{
+            self.title = Utils.stringNamed("Edit_ingredient")
+        }else{
+            self.title = Utils.stringNamed("New_ingredient")
+        }
     }
     
-    func setValuesByIngredient(){
+    
+    /// Permite asignar los valores del ingrediente en los controles
+    func setValues(){
         self.txtId.text = self.objIngredient?.id
-        self.txtName.text = self.objIngredient?.type
-        self.txtType.text = self.objIngredient?.typeIngredient
+        self.txtName.text = self.objIngredient?.name
+        self.txtType.text = Utils.stringNamed((self.objIngredient?.type)!)
+        self.isEdit = (self.objIngredient?.id != "")
         
     }
     
+    /// Permite validar que todos los campos esten diligenciados
+    ///
+    /// - Returns: indica si todo esta diligenciado
     func validateFields() -> Bool{
         view.endEditing(true)
         var bValid:Bool = (self.lblId.text != "")
@@ -54,9 +78,10 @@ class CreateIngredientLisViewController: UIViewController{
         if !bValid {
             self.showToast(message: Utils.stringNamed("All_fields_are_required"))
         }else{
-            self.objIngredient?.id = txtId.text!
-            self.objIngredient?.type = txtName.text!
-            self.objIngredient?.typeIngredient = txtType.text!
+            try! RealmDB.shared().realm.write {
+                self.objIngredient?.id = txtId.text!
+                self.objIngredient?.name = txtName.text!
+            }
         }
         return bValid
     }
@@ -65,10 +90,19 @@ class CreateIngredientLisViewController: UIViewController{
    
     //MARK - Add New Ingredients
     
+    
+    /// Valida que los campos esten diligenciados e invoca al delegado
+    /// solicitando actualizar la lista
+    ///
+    /// - Parameter sender: 
     @IBAction func createIngredientPressed(_ sender: Any) {
         if validateFields() {
             self.navigationController?.popViewController(animated: true)
-            delegate?.addIngredient(objIngredient)
+            if self.isEdit{
+                delegate?.editIngredient(objIngredient!)
+            }else{
+                delegate?.addIngredient(objIngredient!)
+            }
         }
     }
    
@@ -84,12 +118,21 @@ extension CreateIngredientLisViewController: UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (self.arrType![row] as! String)
+        return self.arrType[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.txtType.text = (self.arrType![row] as! String)
+        self.txtType.text = self.arrType[row].name
         self.txtType.resignFirstResponder()
+        try! RealmDB.shared().realm.write {
+            self.objIngredient?.type = self.arrType[row].id
+        }
     }
     
+}
+
+
+struct TypeStruct {
+    var id: String
+    var name: String
 }

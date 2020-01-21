@@ -19,3 +19,5 @@
 "Type"="Tipo";
 "Id"="Id";
 "Name"="Nombre";
+"New_ingredient"="Nuevo ingrediente";
+"Edit_ingredient"="Editar ingrediente";

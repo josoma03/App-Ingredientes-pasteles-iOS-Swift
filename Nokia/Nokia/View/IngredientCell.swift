@@ -28,12 +28,12 @@ class IngredientCell: UITableViewCell {
     func setValuesByIngredient(_ objIngredient: IngredientItem){
         var image = UIImage()
         
-        self.lblType.text = objIngredient.type
+        self.lblType.text = objIngredient.name
         self.lblId.text = objIngredient.id
         self.iconCheck.isHidden = !objIngredient.selected
         self.iconCheck.image = self.iconCheck.image!.imageWithColor(Utils.getColorBranding())
         
-        if objIngredient.typeIngredient == TypeIngredient.Batters.rawValue {
+        if objIngredient.type == TypeIngredient.Batters.rawValue {
             image = UIImage(named: "batter")!
         }else{
             image = UIImage(named: "topping")!

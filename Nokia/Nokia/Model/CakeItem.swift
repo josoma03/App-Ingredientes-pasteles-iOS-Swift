@@ -45,13 +45,13 @@ class CakeItem: Object {
         
         for item in arrTopping {
             let objIngredient = IngredientItem(dic: item as! NSDictionary)
-            objIngredient.typeIngredient = TypeIngredient.Topping.rawValue
+            objIngredient.type = TypeIngredient.Topping.rawValue
             self.arrTopings.append(objIngredient)
         }
         
         for item in arrBatters {
             let objIngredient = IngredientItem(dic: item as! NSDictionary)
-            objIngredient.typeIngredient = TypeIngredient.Batters.rawValue
+            objIngredient.type = TypeIngredient.Batters.rawValue
             self.arrBatters.append(objIngredient)
         }
         

@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		841EBB5D23D68A6000D833FA /* CreateIngredientLisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EBB5C23D68A5F00D833FA /* CreateIngredientLisViewController.swift */; };
 		841EBB6523D68A8800D833FA /* CakeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EBB6423D68A8800D833FA /* CakeDetailCell.swift */; };
-		841EBB6723D68AEB00D833FA /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EBB6623D68AEB00D833FA /* IngredientCell.swift */; };
 		841EBB6E23D6A1C500D833FA /* UIViewController+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EBB6D23D6A1C500D833FA /* UIViewController+Custom.swift */; };
+		841EBB7123D6A78700D833FA /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841EBB6F23D6A78700D833FA /* IngredientCell.xib */; };
+		841EBB7223D6A78700D833FA /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EBB7023D6A78700D833FA /* IngredientCell.swift */; };
 		84C1E0E823D3E294008665A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E0E723D3E294008665A4 /* AppDelegate.swift */; };
 		84C1E0EA23D3E295008665A4 /* CakeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E0E923D3E295008665A4 /* CakeListViewController.swift */; };
 		84C1E0ED23D3E295008665A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E0EB23D3E295008665A4 /* Main.storyboard */; };
 		84C1E0F023D3E295008665A4 /* Nokia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E0EE23D3E295008665A4 /* Nokia.xcdatamodeld */; };
 		84C1E0F223D3E299008665A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E0F123D3E299008665A4 /* Assets.xcassets */; };
 		84C1E0F523D3E299008665A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E0F323D3E299008665A4 /* LaunchScreen.storyboard */; };
-		84C1E0FD23D3F062008665A4 /* IngredientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E0FC23D3F062008665A4 /* IngredientsListViewController.swift */; };
 		84C1E10423D3FA89008665A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10323D3FA89008665A4 /* Constants.swift */; };
 		84C1E10623D3FAC7008665A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10523D3FAC7008665A4 /* NetworkManager.swift */; };
 		84C1E10823D3FB15008665A4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E10723D3FB15008665A4 /* Reachability.swift */; };
@@ -26,7 +26,6 @@
 		84C1E11423D484C7008665A4 /* IngredientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E11323D484C7008665A4 /* IngredientItem.swift */; };
 		84C1E11C23D48C70008665A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E11E23D48C70008665A4 /* Localizable.strings */; };
 		84C1E12323D4A95B008665A4 /* CakeDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */; };
-		84C1E12723D4AB37008665A4 /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12523D4AB37008665A4 /* IngredientCell.xib */; };
 		84C1E12923D4B921008665A4 /* UIImage+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E12823D4B921008665A4 /* UIImage+Custom.swift */; };
 		84C1E12E23D4C7F0008665A4 /* SF-UI-Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12B23D4C7EF008665A4 /* SF-UI-Display-Medium.ttf */; };
 		84C1E12F23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84C1E12C23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf */; };
@@ -40,8 +39,9 @@
 		78744F9069BD0B1B061A3FDC /* Pods-Nokia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nokia.release.xcconfig"; path = "Target Support Files/Pods-Nokia/Pods-Nokia.release.xcconfig"; sourceTree = "<group>"; };
 		841EBB5C23D68A5F00D833FA /* CreateIngredientLisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateIngredientLisViewController.swift; sourceTree = "<group>"; };
 		841EBB6423D68A8800D833FA /* CakeDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDetailCell.swift; sourceTree = "<group>"; };
-		841EBB6623D68AEB00D833FA /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		841EBB6D23D6A1C500D833FA /* UIViewController+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Custom.swift"; sourceTree = "<group>"; };
+		841EBB6F23D6A78700D833FA /* IngredientCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
+		841EBB7023D6A78700D833FA /* IngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		84C1E0E423D3E294008665A4 /* Nokia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nokia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C1E0E723D3E294008665A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C1E0E923D3E295008665A4 /* CakeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,6 @@
 		84C1E0F123D3E299008665A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C1E0F423D3E299008665A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C1E0F623D3E299008665A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C1E0FC23D3F062008665A4 /* IngredientsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListViewController.swift; sourceTree = "<group>"; };
 		84C1E10323D3FA89008665A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84C1E10523D3FAC7008665A4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		84C1E10723D3FB15008665A4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		84C1E11D23D48C70008665A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84C1E11F23D48C72008665A4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeDetailCell.xib; sourceTree = "<group>"; };
-		84C1E12523D4AB37008665A4 /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		84C1E12823D4B921008665A4 /* UIImage+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
 		84C1E12B23D4C7EF008665A4 /* SF-UI-Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Medium.ttf"; sourceTree = "<group>"; };
 		84C1E12C23D4C7F0008665A4 /* SF-UI-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.ttf"; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				841EBB5C23D68A5F00D833FA /* CreateIngredientLisViewController.swift */,
 				84C1E0E923D3E295008665A4 /* CakeListViewController.swift */,
-				84C1E0FC23D3F062008665A4 /* IngredientsListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,10 +164,10 @@
 			children = (
 				84C1E0EB23D3E295008665A4 /* Main.storyboard */,
 				84C1E0F323D3E299008665A4 /* LaunchScreen.storyboard */,
+				841EBB6F23D6A78700D833FA /* IngredientCell.xib */,
 				84C1E12123D4A95B008665A4 /* CakeDetailCell.xib */,
-				84C1E12523D4AB37008665A4 /* IngredientCell.xib */,
+				841EBB7023D6A78700D833FA /* IngredientCell.swift */,
 				841EBB6423D68A8800D833FA /* CakeDetailCell.swift */,
-				841EBB6623D68AEB00D833FA /* IngredientCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,7 +277,7 @@
 				84C1E13023D4C7F0008665A4 /* SFUIDisplay-Black.ttf in Resources */,
 				84C1E11C23D48C70008665A4 /* Localizable.strings in Resources */,
 				84C1E0F223D3E299008665A4 /* Assets.xcassets in Resources */,
-				84C1E12723D4AB37008665A4 /* IngredientCell.xib in Resources */,
+				841EBB7123D6A78700D833FA /* IngredientCell.xib in Resources */,
 				84C1E0ED23D3E295008665A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,13 +341,12 @@
 				841EBB6E23D6A1C500D833FA /* UIViewController+Custom.swift in Sources */,
 				84C1E10823D3FB15008665A4 /* Reachability.swift in Sources */,
 				84C1E10623D3FAC7008665A4 /* NetworkManager.swift in Sources */,
-				841EBB6723D68AEB00D833FA /* IngredientCell.swift in Sources */,
 				84C1E10423D3FA89008665A4 /* Constants.swift in Sources */,
 				84C1E13423D50FD1008665A4 /* RealmDB.swift in Sources */,
 				841EBB5D23D68A6000D833FA /* CreateIngredientLisViewController.swift in Sources */,
 				84C1E0EA23D3E295008665A4 /* CakeListViewController.swift in Sources */,
-				84C1E0FD23D3F062008665A4 /* IngredientsListViewController.swift in Sources */,
 				841EBB6523D68A8800D833FA /* CakeDetailCell.swift in Sources */,
+				841EBB7223D6A78700D833FA /* IngredientCell.swift in Sources */,
 				84C1E0E823D3E294008665A4 /* AppDelegate.swift in Sources */,
 				84C1E10C23D3FCB9008665A4 /* CakeItem.swift in Sources */,
 				84C1E11423D484C7008665A4 /* IngredientItem.swift in Sources */,

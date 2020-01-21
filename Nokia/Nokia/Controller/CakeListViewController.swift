@@ -42,23 +42,6 @@ class CakeListViewController: UITableViewController {
     @IBAction func addIngredientPressed(_ sender: Any) {
         self.objIngredientSelected = IngredientItem()
         self.performSegue(withIdentifier: "gotoCreateIngredient", sender: self)
-        /*let actionShet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        actionShet.view.tintColor = Utils.getColorBranding()
-        
-        let addBatter = UIAlertAction(title: Utils.stringNamed("Batters"), style: UIAlertAction.Style.default) { (takePhotoAndVideo) -> Void in
-            self.optionSelected = TypeIngredient.Batters
-            self.performSegue(withIdentifier: "goToIngredients", sender: self)
-        }
-        let addTopping = UIAlertAction(title: Utils.stringNamed("Topping"), style: UIAlertAction.Style.default) { (libraryPhoto) -> Void in
-            self.optionSelected = TypeIngredient.Topping
-            self.performSegue(withIdentifier: "goToIngredients", sender: self)
-        }
-        let cancel = UIAlertAction(title: Utils.stringNamed("Cancel"), style: UIAlertAction.Style.cancel) { (cancelQuick) -> Void in}
-        actionShet.addAction(addBatter)
-        actionShet.addAction(addTopping)
-        actionShet.addAction(cancel)
-        
-        self.present(actionShet, animated: true, completion: nil)*/
     }
     
     //MARK: - Other methods
@@ -124,11 +107,7 @@ class CakeListViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "goToIngredients"){
-            let controller = segue.destination  as! IngredientsListViewController
-            controller.delegate = self
-            controller.typeItem = optionSelected
-        }else if (segue.identifier == "gotoCreateIngredient"){
+        if (segue.identifier == "gotoCreateIngredient"){
             let controller = segue.destination  as! CreateIngredientLisViewController
             controller.delegate = self
             controller.objIngredient = objIngredientSelected
@@ -241,9 +220,12 @@ class CakeListViewController: UITableViewController {
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return (indexPath.section != 0)
     }
+    
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editButton = UITableViewRowAction(style: .normal, title: Utils.stringNamed("Edit")) { (rowAction, indexPath) in
@@ -269,36 +251,29 @@ class CakeListViewController: UITableViewController {
 }
 
 //MARK: - Delegate IngredientsDelegate methods
-extension CakeListViewController: AddIngredientsDelegate{
+extension CakeListViewController: IngredientsDelegate{
     
-    /// Funcion del delegado, invicada desde el listado de todos los ingredientes
-    /// Permite adiciona un ingrediente a la lista de Batter
+    
+    /// Agrega el nuevo elemento a la lista correspondiente: Batter, Topping
     ///
-    /// - Parameter arrIngredients: ingrediente
-    func addIngredient(_ arrIngredientsNews: [IngredientItem], _ type: TypeIngredient) {
-        
-        for objIngredient in arrIngredientsNews {
-            try! RealmDB.shared().realm.write {
-                (type == TypeIngredient.Batters) ? self.objCake.arrBatters.append(objIngredient) : self.objCake.arrTopings.append(objIngredient)
+    /// - Parameter objIngredientItem: nuevo ingrediente
+    func addIngredient(_ objIngredientItem: IngredientItem) {
+        try! RealmDB.shared().realm.write {
+            if objIngredientItem.type == TypeIngredient.Batters.rawValue {
+                self.objCake.arrBatters.append(objIngredientItem)
+            } else {
+                self.objCake.arrTopings.append(objIngredientItem)
             }
         }
-        
-        tableView.reloadData()
-    }
-}
-
-extension CakeListViewController: CreateIngredientsDelegate{
-    
-    
-    /// Funcion del delegado, invicada desde crear ingredientes
-    /// Permite adiciona un ingrediente a la lista de Batter
-    /// - Parameter objIngredient: nuevo ingrediente
-    func createIngredient(_ objIngredient: IngredientItem) {
-        try! RealmDB.shared().realm.write {
-            (objIngredient.typeIngredient == TypeIngredient.Batters.rawValue) ? self.objCake.arrBatters.append(objIngredient) : self.objCake.arrTopings.append(objIngredient)
-        }
         tableView.reloadData()
     }
     
+    
+    /// Actualiza la lista de ingredientes
+    ///
+    /// - Parameter objIngredientItem: ingrediente editado
+    func editIngredient(_ objIngredientItem: IngredientItem) {
+        tableView.reloadData()
+    }
 }
 
