@@ -14,6 +14,7 @@ struct Constants {
     static let cellIdentifier = "ReusableCell"
     static let cellCakeDetail = "CakeDetailCell"
     static let cellIngredient = "IngredientCell"
+    static let cellCreateIngredient = "CreateIngredientCell"
 }
 
 enum TypeIngredient: String{

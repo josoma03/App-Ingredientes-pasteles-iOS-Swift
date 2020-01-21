@@ -18,6 +18,7 @@ class CakeListViewController: UITableViewController {
     var objCake : CakeItem!
     var optionSelected : TypeIngredient?
     var indicator = UIActivityIndicatorView()
+    var objIngredientSelected : IngredientItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,124 @@ class CakeListViewController: UITableViewController {
         
     }
 
+    
+    //MARK - Add New Ingredients
+    
+    /// Permite desplegar las opciones de ingredientes a añadir: Batters, Toppings
+    ///
+    /// - Parameter sender:
+    @IBAction func addIngredientPressed(_ sender: Any) {
+        self.objIngredientSelected = IngredientItem()
+        self.performSegue(withIdentifier: "gotoCreateIngredient", sender: self)
+        /*let actionShet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        actionShet.view.tintColor = Utils.getColorBranding()
+        
+        let addBatter = UIAlertAction(title: Utils.stringNamed("Batters"), style: UIAlertAction.Style.default) { (takePhotoAndVideo) -> Void in
+            self.optionSelected = TypeIngredient.Batters
+            self.performSegue(withIdentifier: "goToIngredients", sender: self)
+        }
+        let addTopping = UIAlertAction(title: Utils.stringNamed("Topping"), style: UIAlertAction.Style.default) { (libraryPhoto) -> Void in
+            self.optionSelected = TypeIngredient.Topping
+            self.performSegue(withIdentifier: "goToIngredients", sender: self)
+        }
+        let cancel = UIAlertAction(title: Utils.stringNamed("Cancel"), style: UIAlertAction.Style.cancel) { (cancelQuick) -> Void in}
+        actionShet.addAction(addBatter)
+        actionShet.addAction(addTopping)
+        actionShet.addAction(cancel)
+        
+        self.present(actionShet, animated: true, completion: nil)*/
+    }
+    
+    //MARK: - Other methods
+    
+    
+    /// Permite guardar en base de datos el resultado obtenido en el WS
+    ///
+    /// - Parameter data: arreglo obtenido del WS
+    func saveCakesBD(_ data: [CakeItem]){
+        for objCake in data{
+            RealmDB.shared().saveCake(objCake)
+        }
+    }
+    /// Permite buscar la receta con sus ingredientes en base de datos
+    func loadData(){
+        ConnectionManager.sharedInstance.getCakes(idCategory: 1) { (result, msg, data) in
+            DispatchQueue.main.async {
+                self.saveCakesBD(data)
+                
+                self.objCake = RealmDB.shared().getFirstCake()
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    /// Permite eliminar un ingrediente de las listas: Batter, Topping
+    ///
+    /// - Parameter indexPath: indexPath de la seccion
+    func deleteIngredient(_ indexPath: IndexPath){
+        try! RealmDB.shared().realm.write {
+            if(indexPath.section == 1){
+                self.objCake.arrBatters[indexPath.row].selected = false
+                self.objCake.arrBatters.remove(at: indexPath.row)
+            }else{
+                self.objCake.arrTopings[indexPath.row].selected = false
+                self.objCake.arrTopings.remove(at: indexPath.row)
+            }
+        }
+        self.validateCheckedAll()
+        self.tableView.reloadData()
+    }
+    
+    /// Permite obtener el listado de los ingredientes dependiendo del tipo: Batter, Topping
+    ///
+    /// - Parameter section: numero de la seccion: 1, 2
+    /// - Returns: [IngredientItem]
+    func getIngredientsBySection(_ section: Int) -> List<IngredientItem> {
+        if(objCake != nil){
+            return (section == 1) ? objCake!.arrBatters : objCake.arrTopings
+        }else{
+            return List<IngredientItem>()
+        }
+    }
+    
+    /// Permite obtener un ingrediente dependiendo de la seccion: Batter, Topping
+    ///
+    /// - Parameter indexPath: indexPath de la seccion
+    /// - Returns: IngredientItem
+    func getIngredient(_ indexPath: IndexPath) -> IngredientItem {
+        let arrIngredients = getIngredientsBySection(indexPath.section)
+        return (arrIngredients.count > 0) ? arrIngredients[indexPath.row] : IngredientItem()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToIngredients"){
+            let controller = segue.destination  as! IngredientsListViewController
+            controller.delegate = self
+            controller.typeItem = optionSelected
+        }else if (segue.identifier == "gotoCreateIngredient"){
+            let controller = segue.destination  as! CreateIngredientLisViewController
+            controller.delegate = self
+            controller.objIngredient = objIngredientSelected
+        }
+        
+    }
+    
+    
+    /// una vez ceckeados los  todos los items de la lista, mostrara un mensaje sencillo indicando que la preparación finalizó.
+    func validateCheckedAll(){
+        var bValid = true
+        for item in self.objCake.arrTopings{
+            bValid = bValid && item.selected
+        }
+        for item in self.objCake.arrBatters{
+            bValid = bValid && item.selected
+        }
+        
+        if bValid{
+            self.showToast(message: Utils.stringNamed("The_preparation_is_finished"))
+        }
+    }
     
     //MARK - Tableview Datasource Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -125,10 +244,15 @@ class CakeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return (indexPath.section != 0)
     }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        //Dialogo de confirmacion para eliminar una fila
-        if (editingStyle == UITableViewCell.EditingStyle.delete){
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editButton = UITableViewRowAction(style: .normal, title: Utils.stringNamed("Edit")) { (rowAction, indexPath) in
+            self.objIngredientSelected = self.getIngredient(indexPath)
+            self.performSegue(withIdentifier: "gotoCreateIngredient", sender: self)
+        }
+        editButton.backgroundColor = Utils.getColorBranding()
+        let deleteButton = UITableViewRowAction(style: .normal, title: Utils.stringNamed("Delete")) { (rowAction, indexPath) in
+            //Dialogo de confirmacion para eliminar una fila
             let alert = UIAlertController(title: Utils.stringNamed("delete_confirmation"), message: "", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: Utils.stringNamed("Cancel"), style: UIAlertAction.Style.default, handler: nil))
             alert.addAction(UIAlertAction(title: Utils.stringNamed("Accept"), style: .default, handler: { (alert) in
@@ -137,123 +261,15 @@ class CakeListViewController: UITableViewController {
             alert.view.tintColor = Utils.getColorBranding()
             self.present(alert, animated: true, completion: nil)
         }
-    }
-
-    //MARK - Add New Ingredients
-    
-    /// Permite desplegar las opciones de ingredientes a añadir: Batters, Toppings
-    ///
-    /// - Parameter sender: 
-    @IBAction func addIngredientPressed(_ sender: Any) {
-            let actionShet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-            actionShet.view.tintColor = Utils.getColorBranding()
-            
-            let addBatter = UIAlertAction(title: Utils.stringNamed("Batters"), style: UIAlertAction.Style.default) { (takePhotoAndVideo) -> Void in
-                self.optionSelected = TypeIngredient.Batters
-                self.performSegue(withIdentifier: "goToIngredients", sender: self)
-            }
-            let addTopping = UIAlertAction(title: Utils.stringNamed("Topping"), style: UIAlertAction.Style.default) { (libraryPhoto) -> Void in
-                self.optionSelected = TypeIngredient.Topping
-                self.performSegue(withIdentifier: "goToIngredients", sender: self)
-            }
-            let cancel = UIAlertAction(title: Utils.stringNamed("Cancel"), style: UIAlertAction.Style.cancel) { (cancelQuick) -> Void in}
-            actionShet.addAction(addBatter)
-            actionShet.addAction(addTopping)
-            actionShet.addAction(cancel)
+        deleteButton.backgroundColor = UIColor.red
         
-            self.present(actionShet, animated: true, completion: nil)
-    }
-    
-    //MARK: - Other methods
-    
-    
-    /// Permite guardar en base de datos el resultado obtenido en el WS
-    ///
-    /// - Parameter data: arreglo obtenido del WS
-    func saveCakesBD(_ data: [CakeItem]){
-        for objCake in data{
-            RealmDB.shared().saveCake(objCake)
-        }
-    }
-    /// Permite buscar la receta con sus ingredientes en base de datos
-    func loadData(){
-        ConnectionManager.sharedInstance.getCakes(idCategory: 1) { (result, msg, data) in
-            DispatchQueue.main.async {
-                self.saveCakesBD(data)
-                
-                self.objCake = RealmDB.shared().getFirstCake()
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    
-    /// Permite eliminar un ingrediente de las listas: Batter, Topping
-    ///
-    /// - Parameter indexPath: indexPath de la seccion
-    func deleteIngredient(_ indexPath: IndexPath){
-        try! RealmDB.shared().realm.write {
-            if(indexPath.section == 1){
-                self.objCake.arrBatters[indexPath.row].selected = false
-                self.objCake.arrBatters.remove(at: indexPath.row)
-            }else{
-                self.objCake.arrTopings[indexPath.row].selected = false
-                self.objCake.arrTopings.remove(at: indexPath.row)
-            }
-        }
-        self.validateCheckedAll()
-        self.tableView.reloadData()
-    }
-    
-    /// Permite obtener el listado de los ingredientes dependiendo del tipo: Batter, Topping
-    ///
-    /// - Parameter section: numero de la seccion: 1, 2
-    /// - Returns: [IngredientItem]
-    func getIngredientsBySection(_ section: Int) -> List<IngredientItem> {
-        if(objCake != nil){
-            return (section == 1) ? objCake!.arrBatters : objCake.arrTopings
-        }else{
-            return List<IngredientItem>()
-        }
-    }
-    
-    /// Permite obtener un ingrediente dependiendo de la seccion: Batter, Topping
-    ///
-    /// - Parameter indexPath: indexPath de la seccion
-    /// - Returns: IngredientItem
-    func getIngredient(_ indexPath: IndexPath) -> IngredientItem {
-        let arrIngredients = getIngredientsBySection(indexPath.section)
-        return (arrIngredients.count > 0) ? arrIngredients[indexPath.row] : IngredientItem()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "goToIngredients"){
-            let controller = segue.destination  as! IngredientsListViewController
-            controller.delegate = self
-            controller.typeItem = optionSelected
-        }
-    }
-    
-    
-    /// una vez ceckeados los  todos los items de la lista, mostrara un mensaje sencillo indicando que la preparación finalizó.
-    func validateCheckedAll(){
-        var bValid = true
-        for item in self.objCake.arrTopings{
-            bValid = bValid && item.selected
-        }
-        for item in self.objCake.arrBatters{
-            bValid = bValid && item.selected
-        }
-        
-        if bValid{
-            self.showToast(message: Utils.stringNamed("The_preparation_is_finished"))
-        }
+        return [editButton, deleteButton]
     }
     
 }
 
 //MARK: - Delegate IngredientsDelegate methods
-extension CakeListViewController: IngredientsDelegate{
+extension CakeListViewController: AddIngredientsDelegate{
     
     /// Funcion del delegado, invicada desde el listado de todos los ingredientes
     /// Permite adiciona un ingrediente a la lista de Batter
@@ -271,11 +287,18 @@ extension CakeListViewController: IngredientsDelegate{
     }
 }
 
-
-
-
-
-//Editar ingredientes? que se edita?
-//Se deben checkear todos los items?
-//Se guardan los ingredientes al iniciar? o se guardan los ingredientes seleccionados?
+extension CakeListViewController: CreateIngredientsDelegate{
+    
+    
+    /// Funcion del delegado, invicada desde crear ingredientes
+    /// Permite adiciona un ingrediente a la lista de Batter
+    /// - Parameter objIngredient: nuevo ingrediente
+    func createIngredient(_ objIngredient: IngredientItem) {
+        try! RealmDB.shared().realm.write {
+            (objIngredient.typeIngredient == TypeIngredient.Batters.rawValue) ? self.objCake.arrBatters.append(objIngredient) : self.objCake.arrTopings.append(objIngredient)
+        }
+        tableView.reloadData()
+    }
+    
+}
 

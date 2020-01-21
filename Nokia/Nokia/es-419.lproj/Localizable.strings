@@ -15,3 +15,7 @@
 "the_ingredient_has_already"="El ingrediente '%@' ya se adicionó";
 "All_ingredients_have_already_been_added"="Ya se agregaron todos los ingredientes";
 "The_preparation_is_finished"="La preparación finalizó";
+"All_fields_are_required"="Todos los campos son obligatorios";    
+"Type"="Tipo";
+"Id"="Id";
+"Name"="Nombre";

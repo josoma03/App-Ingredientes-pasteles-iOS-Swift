@@ -2,7 +2,7 @@
 //  UIViewController+Custom.swift
 //  Nokia
 //
-//  Created by Jhonattan Solarte Martinez on 19/01/20.
+//  Created by Jhonattan Solarte Martinez on 20/01/20.
 //  Copyright © 2020 Nokia. All rights reserved.
 //
 
@@ -34,3 +34,4 @@ extension UIViewController {
     }
     
 }
+

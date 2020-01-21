@@ -13,14 +13,14 @@ import Foundation
 import UIKit
 import RealmSwift
 
-protocol IngredientsDelegate{
+protocol AddIngredientsDelegate{
     func addIngredient(_ arrIngredientsNews: [IngredientItem], _ type: TypeIngredient)
 }
 
 class IngredientsListViewController: UITableViewController{
     var arrIngredients : Results<IngredientItem>?
     var typeItem : TypeIngredient!
-    var delegate : IngredientsDelegate?
+    var delegate : AddIngredientsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
