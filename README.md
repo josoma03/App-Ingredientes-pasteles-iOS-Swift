@@ -1,5 +1,4 @@
-# NokiaTest
-Prueba Nokia Desarrollador iOS Jhonattan Solarte Martinez
+# Jhonattan Solarte Martinez
 
 Este proyecto incluye Strings de internaciónalización (Ingles, Español), splash, iconos, assets, autolayout, y persistencia con Realm.Al ingresar a la app carga la información del pastel, y el listado de ingredientes desde el WS, y son almacenados  en base de datos, todos los cambios que se hagan (agregar, editar, eliminar) se verán reflejados inmediatamente en la base de datos.
 Los ingredientes todos estarán sin seleccionar inicialmente. 
